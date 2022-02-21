@@ -13,6 +13,6 @@ setup(
     url='',
     license='MIT',
     author='Paul Warren & Enkeleda Cuko',
-    author_email='paul0warren3@gmail.com',
+    author_email='ecsctechdepartment@gmail.com',
     description="""A practical Python Library for identifying morphemes in the english language."""
 )
