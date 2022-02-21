@@ -37,7 +37,7 @@
 <h3 align="center">morphemes</h3>
 
   <p align="center">
-    A practical Python Library for identifying morphemes.
+    A practical Python Library for identifying morphemes in the english language.
     <br />
     <a href="https://github.com/ecscstatsconsulting/morphemes"><strong>Explore the docs »</strong></a>
     <br />
@@ -107,32 +107,19 @@ to feed more complex logic for NLP.
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Using this library is fairly routine and easy.  More detail will be added
+to this section as we get closer to the first release.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+This project was developed with Python 3.9 other versions of Python 3 
+*should* work.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/github_username/repo_name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+  ```sh
+  pip install git+https://github.com/ecscstatsconsulting/morphemes.git
+  ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -141,9 +128,17 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+```python
+from morphemes import Morphemes
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+path = "./data"
+
+m = Morphemes(path)
+print(m.parse("organizationally"))
+```
+NOTE: the `data` path specified is where the morphemes library will
+store a database containing morphemes from [MorphoLex-en](https://github.com/hugomailhot/MorphoLex-en)
+along with other lookups to help properly detect morphemes.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -152,12 +147,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [X] Morpheme detection of known words
+- [ ] Handling of common names and places
+- [ ] Handling of unknown words
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+
+See the [open issues](https://github.com/ecscstatsconsulting/morphemes/issues) for a full list of 
+proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -166,10 +162,17 @@ See the [open issues](https://github.com/github_username/repo_name/issues) for a
 <!-- CONTRIBUTING -->
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing 
+place to learn, inspire, and create. Any contributions you make are 
+**greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+Do you want other languages supported?  Are you an fluent speaker of the
+language you want?  Help contribute and grow this project in to a more
+universal morpheme solution!
+
+If you have a suggestion that would make this better, please fork the repo 
+and create a pull request. You can also simply open an issue with the tag 
+"enhancement".  Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -193,9 +196,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+ECSC, ltd - ecsctechdepartment@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/ecscstatsconsulting/morphemes](https://github.com/ecscstatsconsulting/morphemes)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -204,9 +207,8 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [Enkeleda Cuko]()
+* [Paul Warren]()
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -225,5 +227,6 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [license-shield]: https://img.shields.io/github/license/ecscstatsconsulting/morphemes.svg?style=for-the-badge
 [license-url]: https://github.com/ecscstatsconsulting/morphemes/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+
+[//]: # ([linkedin-url]: https://linkedin.com/in/linkedin_username)
+[//]: # ([product-screenshot]: images/screenshot.png)
