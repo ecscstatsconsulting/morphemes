@@ -12,7 +12,7 @@ setup(
     packages=['morphemes', 'morphemes.utilities', 'morphemes.utilities.morpheme_database'],
     url='',
     license='MIT',
-    author='Paul Warren & Enkeleda Cuko',
-    author_email='ecsctechdepartment@gmail.com',
+    author='Paul Warren, Enkeleda Cuko',
+    author_email='ecsctechdepartment@gmail.com, ecsctechdepartment@gmail.com',
     description="""A practical Python Library for identifying morphemes in the english language."""
 )
