@@ -140,6 +140,41 @@ path = "./data"
 m = Morphemes(path)
 print(m.parse("organizationally"))
 ```
+Output:
+```json
+{
+  "word": "organizationally",
+  "morpheme_count": 5,
+  "tree": [
+    {
+      "children": [
+        {
+          "text": "organ",
+          "type": "root"
+        },
+        {
+          "text": "ize",
+          "type": "bound"
+        }
+      ],
+      "type": "free"
+    },
+    {
+      "text": "ion",
+      "type": "bound"
+    },
+    {
+      "text": "al",
+      "type": "bound"
+    },
+    {
+      "text": "ly",
+      "type": "bound"
+    }
+  ]
+}
+```
+
 NOTE: the `data` path specified is where the morphemes library will
 store a database containing morphemes from [MorphoLex-en](https://github.com/hugomailhot/MorphoLex-en)
 along with other lookups to help properly detect morphemes.
