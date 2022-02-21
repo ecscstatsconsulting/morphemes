@@ -1,5 +1,5 @@
 {% set version = "1.0.8" %}
-
+#CURRENTLY DOES NOT WORK BECAUSE OF tinydb IS ONLY AVAILABLE ON CONDA FORGE CHANNEL
 package:
   name: morphemes
   version: {{ version }}
@@ -19,13 +19,12 @@ requirements:
     - pip
     - requests
     - pandas
-    - tindydb
   run:
     - python
 
 test:
   imports:
-    - imagesize
+    - morphemes
 
 about:
   home: https://github.com/shibukawa/imagesize_py
