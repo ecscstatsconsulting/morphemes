@@ -175,6 +175,11 @@ Output:
 }
 ```
 
+Types definition:
+ - root: Root value of the word (some morphemes may have multiple roots (example: milkshake)
+ - bound: adds to the root morphemes.  Does not contribute meaning on it's own.
+ - free: A word which can be used on its own.  There can be multiple free types in a single morphem (example: milkshake)
+
 NOTE: the `data` path specified is where the morphemes library will
 store a database containing morphemes from [MorphoLex-en](https://github.com/hugomailhot/MorphoLex-en)
 along with other lookups to help properly detect morphemes.
