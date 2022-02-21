@@ -122,7 +122,7 @@ This project was developed with Python 3.9 other versions of Python 3
 ### Installation
 
   ```sh
-  pip install git+https://github.com/ecscstatsconsulting/morphemes.git
+  pip install morphemes
   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
