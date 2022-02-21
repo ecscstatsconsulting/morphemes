@@ -3,7 +3,7 @@ package:
   version: 1.0.8
 
 source:
-  git_rev: https://github.com/ecscstatsconsulting/morphemes/releases
+  git_rev: v1.0.8
   git_url: https://github.com/ecscstatsconsulting/morphemes.git
 
 requirements:
