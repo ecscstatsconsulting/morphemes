@@ -8,7 +8,7 @@ setup(
     name='morphemes',
     long_description_content_type='text/markdown',
     long_description=long_description,
-    version='1.0.1',
+    version='1.0.5',
     packages=['morphemes', 'morphemes.utilities', 'morphemes.utilities.morpheme_database'],
     url='',
     license='MIT',
