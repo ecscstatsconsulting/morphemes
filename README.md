@@ -39,8 +39,10 @@
   <p align="center">
     A practical Python Library for identifying morphemes in the english language.
     <br />
-    <a href="https://github.com/ecscstatsconsulting/morphemes"><strong>Explore the docs »</strong></a>
-    <br />
+
+[//]: # (    <a href="https://github.com/ecscstatsconsulting/morphemes"><strong>Explore the docs »</strong></a>)
+
+[//]: # (    <br />)
     <br />
 
 [//]: # (    <a href="https://github.com/github_username/repo_name">View Demo</a>)
