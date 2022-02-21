@@ -31,10 +31,10 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/morpheme-logo.png" alt="Logo" width="200" height="200">
+    <img src="images/morphemes-logo.png" alt="Logo" width="200" height="200">
   </a>
 
-<h3 align="center">morpheme</h3>
+<h3 align="center">morphemes</h3>
 
   <p align="center">
     A practical Python Library for identifying morphemes.
@@ -83,7 +83,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+A simple and practical solution for obtaining morpheme information
+for a word.  The majority of the logic uses a simple lookup strategy
+based off of the [MorphoLex-en](https://github.com/hugomailhot/MorphoLex-en)
+project.  Additional logic will be added to handle unknown's, names,
+locations and other edge cases.  This is a non-contextual solution intended
+to feed more complex logic for NLP.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -91,14 +96,9 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [MorphoLex-en](https://github.com/hugomailhot/MorphoLex-en)
+* [tinydb](https://tinydb.readthedocs.io/en/latest/)
+* [pandas](https://pandas.pydata.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
