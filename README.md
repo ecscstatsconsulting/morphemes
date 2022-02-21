@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/morphemes-logo.png" alt="Logo" width="200" height="200">
+    <img src="https://raw.githubusercontent.com/ecscstatsconsulting/morphemes/main/images/morphemes-logo.png" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">morphemes</h3>
