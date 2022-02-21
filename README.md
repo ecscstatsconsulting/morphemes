@@ -144,6 +144,7 @@ Output:
 ```json
 {
   "word": "organizationally",
+  "status": "FOUND_IN_DATABASE",
   "morpheme_count": 5,
   "tree": [
     {
@@ -179,6 +180,9 @@ Types definition:
  - root: Root value of the word (some morphemes may have multiple roots (example: milkshake)
  - bound: adds to the root morphemes.  Does not contribute meaning on it's own.
  - free: A word which can be used on its own.  There can be multiple free types in a single morphem (example: milkshake)
+
+Words which are not found are marked with status `NOT_FOUND` and will default
+to 1 morpheme.  This will be improved in future releases.
 
 NOTE: the `data` path specified is where the morphemes library will
 store a database containing morphemes from [MorphoLex-en](https://github.com/hugomailhot/MorphoLex-en)

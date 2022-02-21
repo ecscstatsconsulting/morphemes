@@ -11,6 +11,7 @@ class Morphemes:
         output = {}
         if morph_db_results is not None and len(morph_db_results) > 0:
             morph_db_result = morph_db_results[0]
+            output["status"] = "FOUND_IN_DATABASE"
             output["word"] = word
             output["morpheme_count"] = morph_db_result["Nmorph"]
             segmentation = morph_db_result["MorphoLexSegm"]
@@ -62,5 +63,8 @@ class Morphemes:
                         current = current + c
 
                 output["tree"] = fragments
-
+        else:
+            output["status"] = "NOT_FOUND"
+            output["word"] = word
+            output["morpheme_count"] = 1
         return output
