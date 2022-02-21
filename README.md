@@ -212,7 +212,7 @@ Project Link: [https://github.com/ecscstatsconsulting/morphemes](https://github.
 ## Acknowledgments
 
 * [Enkeleda Cuko]()
-* [Paul Warren]()
+* [Paul Warren](https://github.com/paul0warren)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
