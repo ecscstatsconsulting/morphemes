@@ -4,7 +4,6 @@ import re
 import pandas as pd
 import requests
 from tinydb import TinyDB, where
-
 import warnings
 
 warnings.filterwarnings('ignore', category=UserWarning, module='openpyxl')

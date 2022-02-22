@@ -6,7 +6,7 @@ package:
 
 source:
   git_url: https://github.com/ecscstatsconsulting/morphemes.git
-  git_rev: v1.0.8
+  git_rev: v1.0.9
 
 build:
   noarch: python
