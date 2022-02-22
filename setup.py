@@ -13,7 +13,12 @@ setup(
     long_description=long_description,
     keywords="morpheme, morphology, nlp",
     version='1.0.9',
-    install_requires=required,
+    install_requires=[
+        "pandas>=1.4.1",
+        "requests>=2.27.1",
+        "tinydb>=4.7.0",
+        "openpyxl>=3.0.9",
+    ],
     packages=['morphemes', 'morphemes.utilities', 'morphemes.utilities.morpheme_database'],
     url='https://github.com/ecscstatsconsulting/morphemes',
     license='MIT',
