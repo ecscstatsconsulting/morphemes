@@ -1,6 +1,6 @@
 morphemes~=0.0.1
 setuptools~=57.0.0,
-"pandas~=1.4.1",
-"requests~=2.27.1",
-"tinydb~=4.7.0",
-"openpyxl~=3.0.9",
+pandas~=1.4.1,
+requests~=2.27.1,
+tinydb~=4.7.0,
+openpyxl~=3.0.9,
