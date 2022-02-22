@@ -1,9 +1,6 @@
 from setuptools import setup
 from pathlib import Path
 
-with open('requirements.txt') as f:
-    required = f.read().splitlines()
-
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
