@@ -23,6 +23,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
+[![Downloads](https://static.pepy.tech/personalized-badge/morphemes?period=total&units=international_system&left_color=brightgreen&right_color=blue&left_text=Downloads)](https://pepy.tech/project/morphemes)
 [//]: # ([![LinkedIn][linkedin-shield]][linkedin-url])
 
 
