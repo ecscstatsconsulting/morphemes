@@ -90,9 +90,8 @@
 A simple and practical solution for obtaining morpheme information
 for a word.  The majority of the logic uses a simple lookup strategy
 based off of the [MorphoLex-en](https://github.com/hugomailhot/MorphoLex-en)
-project.  Additional logic will be added to handle unknown's, names,
-locations and other edge cases.  This is a non-contextual solution intended
-to feed more complex logic for NLP.
+project.  Unknown's ie. names of people & places are all counted as 1 morpheme.  
+This is a non-contextual solution intended to feed more complex logic for NLP.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -196,7 +195,7 @@ along with other lookups to help properly detect morphemes.
 ## Roadmap
 
 - [X] Morpheme detection of known words
-- [ ] Handling of common names and places
+- [X] Handling of common names and places (counted as 1 morpheme)
 - [ ] Handling of unknown words
 
 

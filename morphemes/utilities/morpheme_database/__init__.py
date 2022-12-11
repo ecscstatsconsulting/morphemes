@@ -20,6 +20,7 @@ def process_df(df, db):
 class MorphemeDatabase:
     def __init__(self, data_path):
         self.data_path = data_path
+        MorphemeDatabase.db = None
 
     def get_excel_dictionary_path(self):
         filename = self.data_path + "/MorphoLEX_en.xlsx"
@@ -36,12 +37,13 @@ class MorphemeDatabase:
         db = TinyDB(path)
         return db
 
-    def load_db(self):
-        path = self.get_db_path()
-        if not os.path.exists(path):
-            self.refresh()
-        db = TinyDB(path)
-        return db
+    def load_db(self, access_mode="w"):
+        if MorphemeDatabase.db is None:
+            path = self.get_db_path()
+            if not os.path.exists(path):
+                self.refresh()
+            MorphemeDatabase.db = TinyDB(path, access_mode=access_mode)
+        return MorphemeDatabase.db
 
     def get_excel(self):
         path = self.get_excel_dictionary_path()
@@ -67,7 +69,7 @@ class MorphemeDatabase:
                 process_df(df, db)
 
     def lookup(self, word):
-        db = self.load_db()
+        db = self.load_db("r")
         tbl = db.table("WORDS")
         result = tbl.search(where("Word").matches("^" + word + "$", flags=re.IGNORECASE))
         return result
