@@ -204,7 +204,10 @@ proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Developers
 
+Clone the repo and use the Make file to build a local version:
+`make install`
 
 <!-- CONTRIBUTING -->
 ## Contributing
