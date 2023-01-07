@@ -1,8 +1,12 @@
 from .utilities.morpheme_database import MorphemeDatabase
+from appdata import AppDataPaths
 
 class Morphemes:
 
-    def __init__(self, data_path):
+    def __init__(self, data_path=None):
+        if data_path is None:
+            app_paths = AppDataPaths('morphemes')
+            data_path = app_paths.app_data_path
         self.db = MorphemeDatabase(data_path)
 
     def count(self, word):

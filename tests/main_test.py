@@ -3,7 +3,7 @@ import unittest
 import json
 from .context import morphemes
 
-path = "./data"
+path = None
 
 organizationally = {
                              "word": "organizationally",
@@ -74,7 +74,6 @@ applesauce_not_found = {'morpheme_count': 1, 'status': 'NOT_FOUND', 'word': 'app
 
 class TestSingleWordMorphemeParse(unittest.TestCase):
     def runTest(self):
-        print("")
         print("---Single word morpheme parse---")
         m = morphemes.Morphemes(path)
         output = m.parse("organizationally")
