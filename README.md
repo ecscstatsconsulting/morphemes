@@ -130,13 +130,19 @@ This project was developed with Python 3.9 other versions of Python 3
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+Using the morphemes library is very simple.
+1. Import the library
+2. Create an instance of the `Morphemes` class 
+   1. Optional - Specify a data path where the morphemes database will be stored.  If no data path is specified local app storage will be used.
+3. Use the library by calling the `parse` function.
 
+Example:
 ```python
 from morphemes import Morphemes
 
 path = "./data"
 
-m = Morphemes(path)
+m = Morphemes(path) #Data path is optional, local storage will be used if left out.
 print(m.parse("organizationally"))
 ```
 Output:
