@@ -9,7 +9,7 @@ setup(
     long_description_content_type='text/markdown',
     long_description=long_description,
     keywords="morpheme, morphology, nlp",
-    version='1.1.01',
+    version='1.2.0',
     install_requires=[
         "pandas>=1.4.1",
         "requests>=2.27.1",
