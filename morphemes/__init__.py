@@ -1,13 +1,43 @@
 from .utilities.morpheme_database import MorphemeDatabase
 from appdata import AppDataPaths
+from morphemes.config import Config, Settings
+from enum import Enum
+
+
+class MorphoLEXSeperatorType(Enum):
+    PREFIX = "<"
+    BOUND = ">"
+    ROOT_OPEN = "("
+    ROOT_CLOSE = ")"
+    SEGMENT_OPEN = "{"
+    SEGMENT_CLOSE = "}"
+
+    @classmethod
+    def contains(cls, value):
+        return value in cls._value2member_map_
+
+    @classmethod
+    def token_name(cls, value):
+        if value == cls.PREFIX.value:
+            return "prefix"
+        elif value == cls.BOUND.value:
+            return "bound"
+        elif value == cls.ROOT_CLOSE.value:
+            return "root"
+        elif value == cls.ROOT_OPEN.value:
+            return "root"
+        elif value == cls.SEGMENT_CLOSE.value:
+            return "segment"
+        elif value == cls.SEGMENT_OPEN.value:
+            return "segment"
+        return "undefined"
 
 class Morphemes:
 
     def __init__(self, data_path=None):
-        if data_path is None:
-            app_paths = AppDataPaths('morphemes')
-            data_path = app_paths.app_data_path
-        self.db = MorphemeDatabase(data_path)
+        if data_path is not None:
+            Config.set(Settings.data_path, data_path)
+        self.db = MorphemeDatabase(Config.get(Settings.data_path))
 
     def count(self, word):
         morph_db_results = self.db.lookup(word)
@@ -27,35 +57,35 @@ class Morphemes:
             fragments = []
             cur = None
             for c in segmentation:
-                if c == "{":
+                if c == MorphoLEXSeperatorType.SEGMENT_OPEN.value:
                     cur = {
                         "children": [],
                         "type": "free"
                     }
                     in_segment = True
-                if c == "(":
+                if c == MorphoLEXSeperatorType.ROOT_OPEN.value:
                     in_root = True
-                if c == ">" and in_add_on is False:
+                if (c == MorphoLEXSeperatorType.PREFIX.value or c == MorphoLEXSeperatorType.BOUND.value) and in_add_on is False:
                     in_add_on = True
-                elif c == ">":
+                elif c == MorphoLEXSeperatorType.PREFIX.value or c == MorphoLEXSeperatorType.BOUND.value:
                     if cur is not None:
                         cur["children"].append({
                             "text": current,
-                            "type": "bound"
+                            "type": MorphoLEXSeperatorType.token_name(c)
                         })
                     else:
                         fragments.append({
                             "text": current,
-                            "type": "bound"
+                            "type": MorphoLEXSeperatorType.token_name(c)
                         })
                     current = ""
                     in_add_on = False
-                if c == "}":
+                if c == MorphoLEXSeperatorType.SEGMENT_CLOSE.value:
                     current = ""
                     fragments.append(cur)
                     cur = None
                     in_segment = False
-                if c == ")":
+                if c == MorphoLEXSeperatorType.ROOT_CLOSE.value:
                     if cur is not None:
                         cur["children"].append({
                             "text": current,
@@ -63,7 +93,7 @@ class Morphemes:
                         })
                     current = ""
                     in_root = False
-                if c != "(" and c != ")" and c != "{" and c != "}" and c != ">":
+                if not MorphoLEXSeperatorType.contains(c):
                     current = current + c
 
             output = fragments

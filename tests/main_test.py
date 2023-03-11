@@ -1,6 +1,5 @@
 # The test based on unittest module
 import unittest
-import json
 from .context import morphemes
 
 path = None
@@ -61,7 +60,11 @@ automobile = {
                                  {
                                      "children": [
                                          {
-                                             "text": "<auto<mobile",
+                                             "text": "auto",
+                                             "type": "prefix"
+                                         },
+                                         {
+                                             "text": "mobile",
                                              "type": "root"
                                          }
                                      ],
@@ -70,6 +73,38 @@ automobile = {
                              ]
                          }
 applesauce_not_found = {'morpheme_count': 1, 'status': 'NOT_FOUND', 'word': 'applesauce'}
+
+premature = {
+    'morpheme_count': 2,
+    'status': 'FOUND_IN_DATABASE',
+    'tree': [
+        {
+            'children': [
+                {'text': 'pre', 'type': 'prefix'},
+                {'text': 'mature', 'type': 'root'}
+            ],
+            "type": "free"
+        }
+    ],
+    'word': 'premature'
+}
+
+# may be wrong
+overestimating = {
+    'morpheme_count': 3,
+    'status': 'FOUND_IN_DATABASE',
+    'tree': [
+        {'text': 'over', 'type': 'prefix'},
+        {
+            'children': [
+                {'text': 'esteem', 'type': 'root'},
+                {"text": "ate", "type": "bound"}
+            ],
+            "type": "free"
+        }
+    ],
+    'word': 'overestimating'
+}
 
 
 class TestSingleWordMorphemeParse(unittest.TestCase):
@@ -114,6 +149,14 @@ class TestMultipleWordMorphemeParse(unittest.TestCase):
         self.assertEqual(output,
                          automobile,
                          "Failed parse of 'automobile")
+        output = m.parse("premature")
+        self.assertEqual(output,
+                         premature,
+                         "Failed parse of 'premature")
+        output = m.parse("overestimating")
+        self.assertEqual(output,
+                         overestimating,
+                         "Failed parse of 'overestimating")
         print("  ✓ PASSED")
 
 
